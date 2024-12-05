@@ -3,6 +3,7 @@ text.usetex: True
 
 # Use serif font family
 font.family: serif
+pdf.fonttype : 42
 
 # Set the linewidth of axes
 axes.linewidth: 1.
@@ -22,9 +23,12 @@ axes.prop_cycle: cycler('color', ['1f77b4', 'ff7f0e', '2ca02c', 'd62728', '9467b
 
 # Grid settings
 axes.grid: True
-grid.color: gray
+grid.color: #b0b0b0
 grid.linestyle: --
 
 # Ticks settings
 xtick.direction: in
 ytick.direction: in
+
+xtick.major.pad : 8  # Increase padding for x-axis tick labels
+ytick.major.pad : 8  # Increase padding for y-axis tick labels
