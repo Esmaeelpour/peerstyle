@@ -1,0 +1,30 @@
+# Use LaTeX for text rendering
+text.usetex: True
+
+# Use serif font family
+font.family: serif
+
+# Set the linewidth of axes
+axes.linewidth: 1.
+
+# Set the font size for legends
+legend.fontsize: 7
+legend.framealpha: 1
+
+# Set various font sizes
+axes.labelsize: 8
+axes.titlesize: 8
+xtick.labelsize: 8
+ytick.labelsize: 8
+
+# Use tab colors
+axes.prop_cycle: cycler('color', ['1f77b4', 'ff7f0e', '2ca02c', 'd62728', '9467bd', '8c564b', 'e377c2', '7f7f7f', 'bcbd22', '17becf'])
+
+# Grid settings
+axes.grid: True
+grid.color: gray
+grid.linestyle: --
+
+# Ticks settings
+xtick.direction: in
+ytick.direction: in
