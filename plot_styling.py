@@ -2,5 +2,8 @@ import os
 import matplotlib as mpl
 
 # Add PATH directories to Matplotlib's style library paths
-path_dirs = os.environ["PATH"].split(os.pathsep)
+effective_path = os.environ["PATH"]
+
+# Split into individual directories
+path_dirs = effective_path.split(os.pathsep)
 mpl.style.core.USER_LIBRARY_PATHS.extend(path_dirs)
