@@ -10,14 +10,30 @@ readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [
-    {name = "Your Name", email = "your.email@example.com"},
+    {name = "Javad Esmaeelpour", email = "jvd.esm@gmail.com"},
+]
+keywords = ["matplotlib", "style", "scientific-plotting", "ieee", "nature"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Visualization",
 ]
 dependencies = [
     "matplotlib>=3.5.0",
+    "numpy>=1.20.0",
 ]
 
 [project.urls]
 Homepage = "https://github.com/Esmaeelpour/scistyle"
+Repository = "https://github.com/Esmaeelpour/scistyle"
+Issues = "https://github.com/Esmaeelpour/scistyle/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/scistyle"]
@@ -25,4 +41,6 @@ packages = ["src/scistyle"]
 [tool.hatch.build.targets.sdist]
 include = [
     "src/scistyle/styles/*.mplstyle",
+    "README.md",
+    "LICENSE",
 ]

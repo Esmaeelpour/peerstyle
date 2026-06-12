@@ -2,8 +2,13 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 import os
 
+__version__ = "0.1.0"
+
 def get_style_path(name="custom_style"):
     """Return the absolute path to a included style file."""
+    # Handle the case where the user might include the extension
+    if name.endswith(".mplstyle"):
+        name = name[:-9]
     return Path(__file__).parent / "styles" / f"{name}.mplstyle"
 
 def list_styles():
