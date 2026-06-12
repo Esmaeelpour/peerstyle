@@ -2,41 +2,13 @@
 
 Publication-quality Matplotlib styling for peer-reviewed journals.
 
-## Installation
+[![CI](https://github.com/Esmaeelpour/peerstyle/actions/workflows/ci.yml/badge.svg)](https://github.com/Esmaeelpour/peerstyle/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/peerstyle)](https://pypi.org/project/peerstyle/)
+[![Python](https://img.shields.io/pypi/pyversions/peerstyle)](https://pypi.org/project/peerstyle/)
 
-```bash
-pip install peerstyle
-```
+---
 
-## Quick start
-
-```python
-import matplotlib.pyplot as plt
-import peerstyle
-
-peerstyle.use_style('nature')
-
-fig, ax = plt.subplots(figsize=peerstyle.figsize('nature'))
-ax.plot(x, y)
-peerstyle.save(fig, 'figure.pdf')
-```
-
-## Styles
-
-PeerStyle has two kinds of styles: **presets** (full looks for a specific journal or context) and **modifiers** (small tweaks you layer on top). Stack them freely:
-
-```python
-peerstyle.use_style(['ieee', 'bright', 'no-latex'])
-```
-
-### Presets
-
-| Name | Description |
-|------|-------------|
-| `ieee` | IEEE journal — Times New Roman, 3.5 in column, ticks in |
-| `nature` | Nature journal — Arial, 89 mm column, ticks out |
-| `custom_style` | Default serif scientific style with LaTeX |
-| `poster` | High-visibility for conference posters |
+## Gallery
 
 <div align="center">
 
@@ -48,21 +20,6 @@ peerstyle.use_style(['ieee', 'bright', 'no-latex'])
 |:---:|:---:|
 | <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/nature.png" width="380"> | <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/poster.png" width="380"> |
 
-</div>
-
-### Modifiers
-
-| Name | What it does |
-|------|-------------|
-| `no-latex` | Disables LaTeX, switches to STIX fonts (visually close to Computer Modern) |
-| `despine` | Removes top and right spines — common in biology and statistics |
-| `notebook` | Larger fonts and figure size for Jupyter notebooks |
-| `bright` | [Paul Tol's](https://personal.sron.nl/~pault/) CVD-safe bright colour palette |
-| `muted` | Paul Tol's CVD-safe muted colour palette (softer, good for many series) |
-| `grayscale` | Black/grey with varied linestyles — for B&W print and monochrome checks |
-
-<div align="center">
-
 | `bright` | `muted` |
 |:---:|:---:|
 | <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/bright.png" width="380"> | <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/muted.png" width="380"> |
@@ -73,70 +30,96 @@ peerstyle.use_style(['ieee', 'bright', 'no-latex'])
 
 </div>
 
-## API
+---
 
-### `use_style(name, **kwargs)`
+## Installation
 
-Apply a style globally. Accepts a single name or a list for stacking.
-Keyword overrides are applied on top: `figsize`, `fontsize`, `dpi`, `linewidth`, `colormap`.
-
-```python
-peerstyle.use_style('nature')
-peerstyle.use_style(['ieee', 'bright'])
-peerstyle.use_style('ieee', fontsize=9, figsize=(5, 3))
+```bash
+pip install peerstyle
 ```
 
-### `style_context(name, **kwargs)`
+---
 
-Context manager — restores rcParams automatically on exit. Safe to use in notebooks.
+## Usage
+
+**Apply a style globally:**
+
+```python
+import peerstyle
+
+peerstyle.use_style('nature')
+```
+
+**Stack styles** — presets and modifiers compose freely:
+
+```python
+peerstyle.use_style(['ieee', 'bright', 'no-latex'])
+```
+
+**Use as a context manager** — rcParams restore automatically on exit, safe in notebooks:
 
 ```python
 with peerstyle.style_context('nature'):
     fig, ax = plt.subplots()
     ax.plot(x, y)
-# rcParams restored here
 ```
 
-### `figsize(style, *, ncols=1, nrows=1, double_col=False, aspect=0.75)`
-
-Returns `(width, height)` in inches for a figure that fits the journal's column width.
+**Get the right figure size for a journal column:**
 
 ```python
-fig, ax   = plt.subplots(figsize=peerstyle.figsize('ieee'))
+fig, ax = plt.subplots(figsize=peerstyle.figsize('ieee'))
 fig, axes = plt.subplots(1, 2, figsize=peerstyle.figsize('ieee', ncols=2))
-fig, axes = plt.subplots(2, 1, figsize=peerstyle.figsize('nature', nrows=2))
-fig, ax   = plt.subplots(figsize=peerstyle.figsize('nature', double_col=True))
+fig, ax = plt.subplots(figsize=peerstyle.figsize('nature', double_col=True))
 ```
 
-### `save(fig, path, **kwargs)`
-
-Save with publication defaults (`dpi=300`, `bbox_inches='tight'`). Any kwarg overrides.
+**Save with publication defaults** (`dpi=300`, `bbox_inches='tight'`):
 
 ```python
 peerstyle.save(fig, 'figure.pdf')
-peerstyle.save(fig, 'figure.png', dpi=600)
 ```
 
-### `list_styles()`
+---
+
+## Styles
+
+### Presets
+
+Full looks for a specific journal or context.
+
+| Name | Description |
+|------|-------------|
+| `custom_style` | Default serif scientific style with LaTeX |
+| `ieee` | IEEE journal — Times New Roman, 3.5 in column, ticks in |
+| `nature` | Nature journal — Arial, 89 mm column, ticks out |
+| `poster` | High-visibility for conference posters |
+
+### Modifiers
+
+Small, focused tweaks designed to be layered on top of a preset.
+
+| Name | What it does |
+|------|-------------|
+| `no-latex` | Disables LaTeX, uses STIX fonts (visually close to Computer Modern) |
+| `despine` | Removes top and right spines — common in biology and statistics |
+| `notebook` | Larger fonts and figure size for Jupyter notebooks |
+| `bright` | [Paul Tol's](https://personal.sron.nl/~pault/) CVD-safe bright colour palette |
+| `muted` | Paul Tol's CVD-safe muted palette — softer, good for many series |
+| `grayscale` | Black/grey with varied linestyles for B&W print |
+
+All bundled styles are also registered with matplotlib on import, so they work anywhere a style name is accepted:
 
 ```python
-print(peerstyle.list_styles())
-# ['bright', 'custom_style', 'despine', 'grayscale', 'ieee',
-#  'muted', 'nature', 'no-latex', 'notebook', 'poster']
+plt.style.use('peerstyle.nature')
+plt.style.use(['peerstyle.ieee', 'peerstyle.muted', 'peerstyle.no-latex'])
 ```
 
-## Curved Text — Direct Line Labeling
+---
 
-Label curves along their own paths instead of in a legend, so the eye never
-leaves the data to decode a colour key.
+## Curved Text
+
+Label lines along their own paths — no legend needed.
 
 ```python
-x = np.linspace(0, 2 * np.pi, 400)
-
-fig, ax = plt.subplots()
-ax.plot(x, np.sin(x), color='C0')
-ax.plot(x, np.cos(x), color='C1')
-
 peerstyle.curved_text(ax, x, np.sin(x), 'sin(x)', pos=0.10, offset=9, color='C0')
 peerstyle.curved_text(ax, x, np.cos(x), 'cos(x)', pos=0.88, offset=-9, color='C1')
 ```
@@ -147,26 +130,23 @@ peerstyle.curved_text(ax, x, np.cos(x), 'cos(x)', pos=0.88, offset=-9, color='C1
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
-| `pos` | `0.5` | Position along the curve as a fraction of arc length (0 = start, 1 = end) |
-| `anchor` | `"center"` | Which part of the label lands at `pos`: `"start"`, `"center"`, or `"end"` |
+| `pos` | `0.5` | Anchor position as a fraction of arc length (0 = start, 1 = end) |
+| `anchor` | `"center"` | Part of the label that lands at `pos`: `"start"`, `"center"`, or `"end"` |
 | `offset` | `0.0` | Perpendicular offset in points — positive is above a left-to-right curve |
 
-Extra kwargs (`color`, `fontsize`, `alpha`, …) pass through to each character's `Text`.
+Extra kwargs (`color`, `fontsize`, `alpha`, …) pass through to each character's `Text`. An object-oriented `CurvedText` class is also available for those who prefer it.
 
-The object-oriented form is also available:
+> Curved text adapted from [thiebes/curved-text](https://github.com/thiebes/curved-text) (MIT) — go give it a star.
 
-```python
-from peerstyle import CurvedText
-CurvedText(x, y, 'along the curve', ax, pos=0.2, anchor='start', offset=4.0)
-```
+---
 
-> Curved text support is adapted from [thiebes/curved-text](https://github.com/thiebes/curved-text) (MIT License) — go give it a star.
+## API Reference
 
-## Registered style names
-
-On import, PeerStyle registers all bundled styles with matplotlib under a `peerstyle.` prefix, so they work anywhere matplotlib accepts a style name:
-
-```python
-plt.style.use('peerstyle.nature')
-plt.style.use(['peerstyle.ieee', 'peerstyle.bright'])
-```
+| Function | Description |
+|----------|-------------|
+| `use_style(name, **kwargs)` | Apply a style globally. Accepts a name or list. Kwargs: `figsize`, `fontsize`, `dpi`, `linewidth`, `colormap`. |
+| `style_context(name, **kwargs)` | Context manager version of `use_style` — restores rcParams on exit. |
+| `figsize(style, *, ncols, nrows, double_col, aspect)` | Returns `(w, h)` in inches for the journal's column width. |
+| `save(fig, path, **kwargs)` | Saves with `dpi=300`, `bbox_inches='tight'` by default. |
+| `list_styles()` | Returns a list of all available style names. |
+| `curved_text(ax, x, y, text, *, pos, anchor, offset, **kwargs)` | Draws text following a curve. |
