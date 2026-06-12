@@ -35,11 +35,17 @@ plt.show()
 
 ## Visual Gallery
 
-| `custom_style` | `ieee` |
+<div align="center">
+
+| Default (`custom_style`) | IEEE Journal (`ieee`) |
 |:---:|:---:|
-| ![custom_style](docs/gallery/custom_style.png) | ![ieee](docs/gallery/ieee.png) |
-| `nature` | `poster` |
-| ![nature](docs/gallery/nature.png) | ![poster](docs/gallery/poster.png) |
+| <img src="docs/gallery/custom_style.png" width="400"> | <img src="docs/gallery/ieee.png" width="400"> |
+
+| Nature Journal (`nature`) | Presentation Poster (`poster`) |
+|:---:|:---:|
+| <img src="docs/gallery/nature.png" width="400"> | <img src="docs/gallery/poster.png" width="400"> |
+
+</div>
 
 ## Available Styles
 
