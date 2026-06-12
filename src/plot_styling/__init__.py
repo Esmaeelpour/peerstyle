@@ -6,19 +6,39 @@ def get_style_path(name="custom_style"):
     """Return the absolute path to a included style file."""
     return Path(__file__).parent / "styles" / f"{name}.mplstyle"
 
+def list_styles():
+    """List all available custom styles in this package."""
+    styles_dir = Path(__file__).parent / "styles"
+    if styles_dir.exists():
+        return [f.stem for f in styles_dir.glob("*.mplstyle")]
+    return []
+
 def use_style(name="custom_style"):
     """
     Apply a custom Matplotlib style included in this package.
     
     Args:
-        name (str): The name of the style to apply (without .mplstyle extension).
+        name (str or list): The name(s) of the style(s) to apply.
     """
-    style_path = get_style_path(name)
-    if style_path.exists():
-        plt.style.use(str(style_path))
+    if isinstance(name, list):
+        style_paths = []
+        for n in name:
+            path = get_style_path(n)
+            style_paths.append(str(path) if path.exists() else n)
+        plt.style.use(style_paths)
     else:
-        # Fallback to standard matplotlib styles if not found in our package
-        plt.style.use(name)
+        style_path = get_style_path(name)
+        if style_path.exists():
+            plt.style.use(str(style_path))
+        else:
+            plt.style.use(name)
+    
+    # Check if LaTeX is requested but not available
+    if plt.rcParams.get("text.usetex", False):
+        import shutil
+        if not shutil.which("latex"):
+            print("Warning: LaTeX not found. Disabling 'text.usetex' for this session.")
+            plt.rcParams["text.usetex"] = False
 
 def register_styles():
     """Register all styles in this package with Matplotlib."""

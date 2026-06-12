@@ -1,0 +1,23 @@
+# Poster Style - High visibility
+figure.figsize: 12, 9
+figure.dpi: 150
+
+# Fonts
+font.family: sans-serif
+font.size: 24
+
+# Font sizes
+axes.labelsize: 32
+axes.titlesize: 40
+legend.fontsize: 28
+xtick.labelsize: 28
+ytick.labelsize: 28
+
+# Lines
+axes.linewidth: 3
+grid.linewidth: 1.5
+lines.linewidth: 4
+lines.markersize: 12
+
+# Colors - Vibrant for posters
+axes.prop_cycle: cycler('color', ['348ABD', 'A60628', '7A68A6', '467821', 'CF4457', '188487', 'E24A33'])

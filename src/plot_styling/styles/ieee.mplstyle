@@ -1,0 +1,35 @@
+# IEEE Journal Style
+# Standard column width is 3.5 inches
+figure.figsize: 3.5, 2.625
+figure.dpi: 300
+
+# Fonts - IEEE usually prefers serif (Times New Roman)
+font.family: serif
+font.serif: Times New Roman, Times, DejaVu Serif, serif
+mathtext.fontset: stix
+
+# Font sizes
+axes.labelsize: 8
+axes.titlesize: 8
+legend.fontsize: 8
+xtick.labelsize: 7
+ytick.labelsize: 7
+
+# Lines and markers
+axes.linewidth: 0.6
+grid.linewidth: 0.4
+lines.linewidth: 1.0
+lines.markersize: 3
+
+# Ticks
+xtick.major.width: 0.6
+ytick.major.width: 0.6
+xtick.minor.width: 0.4
+ytick.minor.width: 0.4
+xtick.direction: in
+ytick.direction: in
+xtick.top: True
+ytick.right: True
+
+# Colors - Professional, high contrast
+axes.prop_cycle: cycler('color', ['000000', 'E69F00', '56B4E9', '009E73', 'F0E442', '0072B2', 'D55E00', 'CC79A7'])

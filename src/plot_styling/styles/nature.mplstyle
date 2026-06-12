@@ -1,0 +1,29 @@
+# Nature Journal Style
+# Single column width: 89mm (approx 3.5 in)
+figure.figsize: 3.5, 2.625
+figure.dpi: 300
+
+# Fonts - Nature prefers sans-serif (Helvetica/Arial)
+font.family: sans-serif
+font.sans-serif: Arial, Helvetica, DejaVu Sans, sans-serif
+
+# Font sizes - precise as per Nature guidelines
+axes.labelsize: 7
+axes.titlesize: 7
+legend.fontsize: 7
+xtick.labelsize: 5
+ytick.labelsize: 5
+
+# Lines
+axes.linewidth: 0.5
+grid.linewidth: 0.3
+lines.linewidth: 1.0
+
+# Ticks
+xtick.direction: out
+ytick.direction: out
+xtick.major.size: 2
+ytick.major.size: 2
+
+# Colors - Nature style often uses clean, distinct colors
+axes.prop_cycle: cycler('color', ['E64B35', '4DBBD5', '00A087', '3C8DBC', 'F39B7F', '8491B3', '91D1C2', 'DC0000'])
