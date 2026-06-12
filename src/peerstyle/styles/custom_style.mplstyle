@@ -3,7 +3,8 @@ text.usetex: True
 
 # Use serif font family
 font.family: serif
-pdf.fonttype : 42
+pdf.fonttype:   42
+svg.fonttype:   none
 
 # Set the linewidth of axes
 axes.linewidth: 1.

@@ -1,0 +1,13 @@
+# Modifier: larger fonts and figure size for Jupyter notebooks.
+# Stack on top of any preset: use_style(['nature', 'notebook'])
+text.usetex:        False
+figure.figsize:     6, 4.5
+figure.dpi:         100
+font.size:          12
+axes.labelsize:     12
+axes.titlesize:     13
+legend.fontsize:    11
+xtick.labelsize:    10
+ytick.labelsize:    10
+lines.linewidth:    2
+lines.markersize:   6

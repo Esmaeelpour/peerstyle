@@ -1,0 +1,4 @@
+# Greyscale with varied linestyles for black-and-white print.
+# Required by some journals; useful for checking monochrome readability.
+axes.prop_cycle: (cycler('color', ['000000', '444444', '777777', 'AAAAAA', '222222', '666666']) + cycler('linestyle', ['-', '--', ':', '-.', (0,(3,1,1,1)), (0,(5,1))]))
+image.cmap:      gray

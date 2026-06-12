@@ -1,0 +1,6 @@
+# Modifier: disable LaTeX and use STIX fonts as a close substitute.
+# Stack on top of any preset: use_style(['ieee', 'no-latex'])
+text.usetex:        False
+mathtext.fontset:   stix
+font.family:        serif
+font.serif:         STIXGeneral, DejaVu Serif, serif

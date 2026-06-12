@@ -1,0 +1,5 @@
+# Modifier: remove top and right spines.
+# Common in biology, statistics, and data science.
+# Stack on top of any preset: use_style(['nature', 'despine'])
+axes.spines.top:    False
+axes.spines.right:  False

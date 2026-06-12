@@ -33,3 +33,14 @@ ytick.right: True
 
 # Colors - Professional, high contrast
 axes.prop_cycle: cycler('color', ['000000', 'E69F00', '56B4E9', '009E73', 'F0E442', '0072B2', 'D55E00', 'CC79A7'])
+
+# Minor ticks (conventional for IEEE)
+xtick.minor.visible: True
+ytick.minor.visible: True
+
+# Export settings
+pdf.fonttype:    42
+svg.fonttype:    none
+savefig.dpi:     300
+savefig.bbox:    tight
+savefig.pad_inches: 0.05

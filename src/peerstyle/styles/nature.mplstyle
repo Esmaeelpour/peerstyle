@@ -27,3 +27,10 @@ ytick.major.size: 2
 
 # Colors - Nature style often uses clean, distinct colors
 axes.prop_cycle: cycler('color', ['E64B35', '4DBBD5', '00A087', '3C8DBC', 'F39B7F', '8491B3', '91D1C2', 'DC0000'])
+
+# Export settings
+pdf.fonttype:    42
+svg.fonttype:    none
+savefig.dpi:     300
+savefig.bbox:    tight
+savefig.pad_inches: 0.05

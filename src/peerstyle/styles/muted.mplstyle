@@ -1,0 +1,4 @@
+# Paul Tol's CVD-safe muted colour set.
+# Softer than bright; good for figures with many series.
+# Reference: https://personal.sron.nl/~pault/
+axes.prop_cycle: cycler('color', ['332288', '88CCEE', '44AA99', '117733', '999933', 'DDCC77', 'CC6677', '882255', 'AA4499'])
