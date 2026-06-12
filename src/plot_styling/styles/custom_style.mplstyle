@@ -23,8 +23,19 @@ axes.prop_cycle: cycler('color', ['1f77b4', 'ff7f0e', '2ca02c', 'd62728', '9467b
 
 # Grid settings
 axes.grid: True
-grid.color: #b0b0b0
+grid.color: b0b0b0
 grid.linestyle: --
+grid.linewidth: 0.5
+
+# Figure settings
+figure.figsize: 3.5, 2.625  # Standard single-column width for many journals
+figure.dpi: 300
+figure.autolayout: True
+
+# Savefig settings
+savefig.dpi: 300
+savefig.format: pdf
+savefig.bbox: tight
 
 # Ticks settings
 xtick.direction: in
