@@ -14,6 +14,8 @@ def create_sample_plot(style_name, output_path=None):
     peerstyle.use_style(style_name)
     plt.rcParams['figure.figsize'] = _GALLERY_FIGSIZE
     plt.rcParams['figure.dpi'] = _GALLERY_DPI
+    plt.rcParams['figure.autolayout'] = False
+    plt.rcParams['savefig.bbox'] = None
 
     x = np.linspace(0, 10, 100)
 
@@ -26,9 +28,10 @@ def create_sample_plot(style_name, output_path=None):
     ax.set_ylabel('Y-axis Label')
     ax.set_title(f'Style: {style_name}')
     ax.legend()
+    fig.tight_layout()
 
     if output_path:
-        fig.savefig(output_path, dpi=_GALLERY_DPI, bbox_inches='tight')
+        fig.savefig(output_path, dpi=_GALLERY_DPI)
         plt.close(fig)
         print(f"Saved preview for '{style_name}' to {output_path}")
     else:
@@ -40,6 +43,8 @@ def create_curved_text_demo(style_name="nature", output_path=None):
     peerstyle.use_style(style_name)
     plt.rcParams['figure.figsize'] = _GALLERY_FIGSIZE
     plt.rcParams['figure.dpi'] = _GALLERY_DPI
+    plt.rcParams['figure.autolayout'] = False
+    plt.rcParams['savefig.bbox'] = None
 
     x = np.linspace(0, 2 * np.pi, 400)
 
@@ -60,7 +65,8 @@ def create_curved_text_demo(style_name="nature", output_path=None):
     ax.set_title('Curved Text — Direct Line Labeling')
 
     if output_path:
-        fig.savefig(output_path, dpi=_GALLERY_DPI, bbox_inches='tight')
+        fig.tight_layout()
+        fig.savefig(output_path, dpi=_GALLERY_DPI)
         plt.close(fig)
         print(f"Saved curved text demo to {output_path}")
     else:
