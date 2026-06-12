@@ -1,4 +1,5 @@
 import matplotlib
+import matplotlib.style.core
 import matplotlib.pyplot as plt
 from contextlib import contextmanager
 from pathlib import Path
