@@ -33,17 +33,19 @@ def create_curved_text_demo(style_name="nature", output_path=None):
 
     x = np.linspace(0, 2 * np.pi, 400)
 
+    # Each label placed at a different arc-length fraction so they
+    # land in separate regions of the plot.
     curves = [
-        (np.sin(x),         "sin(x)",         "C0", 0.25),
-        (np.cos(x),         "cos(x)",         "C1", 0.30),
-        (np.sin(2 * x),     "sin(2x)",        "C2", 0.20),
-        (0.5 * np.cos(2*x), "0.5·cos(2x)",   "C3", 0.35),
+        (np.sin(x),      "sin(x)",    "C0", 0.10,  9),
+        (np.cos(x),      "cos(x)",    "C1", 0.88, -9),
+        (np.sin(2*x)/2,  "½ sin(2x)", "C2", 0.52,  9),
     ]
 
     fig, ax = plt.subplots()
-    for y, label, color, pos in curves:
+    for y, label, color, pos, offset in curves:
         ax.plot(x, y, color=color)
-        peerstyle.curved_text(ax, x, y, label, pos=pos, offset=6, color=color)
+        peerstyle.curved_text(ax, x, y, label,
+                              pos=pos, offset=offset, color=color, fontsize=9)
 
     ax.set_xlabel('x')
     ax.set_ylabel('y')
