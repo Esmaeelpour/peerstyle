@@ -1,0 +1,52 @@
+site_name: PeerStyle
+site_description: Publication-quality Matplotlib styling for peer-reviewed journals.
+site_url: https://esmaeelpour.github.io/peerstyle/
+site_author: Javad Esmaeelpour
+repo_url: https://github.com/Esmaeelpour/peerstyle
+repo_name: Esmaeelpour/peerstyle
+edit_uri: ""
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.sections
+    - content.code.copy
+    - search.highlight
+    - search.suggest
+
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - tables
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: index.md
+  - Styles: styles.md
+  - API: api.md
+  - Examples: examples.md
