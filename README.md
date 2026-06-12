@@ -101,3 +101,5 @@ CurvedText(x, y, 'along the curve', ax, pos=0.2, anchor='start', offset=4.0)
 
 The label recomputes its position on every draw, so it keeps following the
 curve through figure resizing and interactive panning or zooming.
+
+> Curved text support is adapted from [thiebes/curved-text](https://github.com/thiebes/curved-text) (MIT License) — go give it a star.
