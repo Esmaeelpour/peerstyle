@@ -6,23 +6,10 @@ import peerstyle
 
 _GALLERY_DPI = 150
 
-# Canvas sizes per style (overrides the default)
-# poster: 40pt fonts need a large canvas to look proportional
-# notebook: matches the 6x4.5 figsize that notebook modifier sets
-_FIGSIZE = {
-    'poster':   (10, 6.0),   # landscape canvas; legend placed outside to the right
-    'notebook': (6.0, 4.5),  # matches the 6x4.5 figsize that notebook modifier sets
-}
-_DEFAULT_FIGSIZE = (5, 3.75)
-
-# Modifier styles need a base preset to show what they actually change
+# Modifier styles have no standalone look; show them stacked on a preset
+# so the gallery visitor can see what each modifier actually changes.
 _MODIFIER_BASE = 'ieee'
 _MODIFIERS = frozenset({'bright', 'muted', 'grayscale', 'despine', 'no-latex', 'notebook'})
-
-
-def _make_fig(style_key):
-    figsize = _FIGSIZE.get(style_key, _DEFAULT_FIGSIZE)
-    return plt.subplots(figsize=figsize, constrained_layout=True)
 
 
 def create_sample_plot(style_name, output_path=None):
@@ -34,7 +21,7 @@ def create_sample_plot(style_name, output_path=None):
         peerstyle.use_style(style_name)
 
     x = np.linspace(0, 10, 100)
-    fig, ax = _make_fig(style_name)
+    fig, ax = plt.subplots()  # style controls its own figsize via rcParams
 
     ax.plot(x, np.sin(x),           label='sin(x)')
     ax.plot(x, np.cos(x),           label='cos(x)')
@@ -42,11 +29,7 @@ def create_sample_plot(style_name, output_path=None):
     ax.set_xlabel('X-axis Label')
     ax.set_ylabel('Y-axis Label')
     ax.set_title(f'Style: {style_name}')
-    # poster's thick lines fill every corner; put the legend outside to the right
-    if style_name == 'poster':
-        ax.legend(loc='center left', bbox_to_anchor=(1.02, 0.5))
-    else:
-        ax.legend()
+    ax.legend()
 
     if output_path:
         fig.savefig(output_path, dpi=_GALLERY_DPI, bbox_inches='tight')
@@ -61,7 +44,7 @@ def create_curved_text_demo(style_name='nature', output_path=None):
     peerstyle.use_style(style_name)
 
     x = np.linspace(0, 2 * np.pi, 400)
-    fig, ax = _make_fig(style_name)
+    fig, ax = plt.subplots()
 
     curves = [
         (np.sin(x),     'sin(x)',    'C0', 0.10,  9),
