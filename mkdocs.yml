@@ -25,6 +25,7 @@ theme:
     - navigation.tabs
     - navigation.top
     - navigation.sections
+    - navigation.indexes
     - content.code.copy
     - search.highlight
     - search.suggest
@@ -37,16 +38,27 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.superfences
   - pymdownx.inlinehilite
-  - pymdownx.tabbed:
-      alternate_style: true
   - admonition
   - pymdownx.details
   - tables
   - attr_list
   - md_in_html
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Esmaeelpour/peerstyle
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/peerstyle/
+
+copyright: Copyright &copy; 2024 Javad Esmaeelpour — MIT License
 
 nav:
   - Home: index.md
   - Styles: styles.md
-  - API: api.md
+  - API Reference: api.md
   - Examples: examples.md
+  - FAQ: faq.md
+  - Changelog: changelog.md

@@ -6,7 +6,7 @@
 [![PyPI](https://img.shields.io/pypi/v/peerstyle)](https://pypi.org/project/peerstyle/)
 [![Python](https://img.shields.io/pypi/pyversions/peerstyle)](https://pypi.org/project/peerstyle/)
 
-PeerStyle gives you publication-ready Matplotlib figures in one line. Pick a journal preset, optionally stack modifier styles on top, and export — no manual rcParams tuning required.
+PeerStyle gives you publication-ready Matplotlib figures in one line. Pick a journal preset, layer modifier styles on top, and export — no manual rcParams tuning required.
 
 ---
 
@@ -15,6 +15,8 @@ PeerStyle gives you publication-ready Matplotlib figures in one line. Pick a jou
 ```bash
 pip install peerstyle
 ```
+
+Requires Python ≥ 3.8 and Matplotlib ≥ 3.5. No other dependencies.
 
 ---
 
@@ -37,26 +39,31 @@ ax.legend()
 peerstyle.save(fig, 'figure.pdf')
 ```
 
-**Stack styles** — presets and modifiers compose freely:
+Stack a preset with modifiers to compose exactly what you need:
 
 ```python
+# IEEE style, CVD-safe colors, no LaTeX required
 peerstyle.use_style(['ieee', 'bright', 'no-latex'])
+
+# Nature style, open axes, Jupyter-friendly
+peerstyle.use_style(['nature', 'despine', 'notebook'])
 ```
 
-**Safe in notebooks** — use the context manager to restore rcParams automatically:
+Use the context manager in notebooks — rcParams restore automatically on exit:
 
 ```python
-with peerstyle.style_context('nature'):
-    fig, ax = plt.subplots()
+with peerstyle.style_context('ieee'):
+    fig, ax = plt.subplots(figsize=peerstyle.figsize('ieee'))
     ax.plot(x, y)
-# rcParams restored here
+    peerstyle.save(fig, 'figure.pdf')
+# default rcParams restored here
 ```
 
 ---
 
 ## Gallery
 
-<div class="grid" markdown>
+### Presets
 
 | `custom_style` | `ieee` |
 |:-:|:-:|
@@ -66,12 +73,20 @@ with peerstyle.style_context('nature'):
 |:-:|:-:|
 | ![nature](gallery/nature.png) | ![poster](gallery/poster.png) |
 
+### Color modifiers
+
 | `bright` | `muted` |
 |:-:|:-:|
 | ![bright](gallery/bright.png) | ![muted](gallery/muted.png) |
+
+### Layout modifiers
 
 | `grayscale` | `despine` |
 |:-:|:-:|
 | ![grayscale](gallery/grayscale.png) | ![despine](gallery/despine.png) |
 
-</div>
+### Curved text
+
+Label lines directly along their paths — no legend needed.
+
+![curved text demo](gallery/curved_text_demo.png)
