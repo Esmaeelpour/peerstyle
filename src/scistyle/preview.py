@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
-import plot_styling
+import scistyle
 
 def create_sample_plot(style_name, output_path=None):
     """Generate a sample plot using a specific style."""
-    plot_styling.use_style(style_name)
+    scistyle.use_style(style_name)
     
     x = np.linspace(0, 10, 100)
     
@@ -31,7 +31,7 @@ def generate_gallery(output_dir="docs/gallery"):
     out_path = Path(output_dir)
     out_path.mkdir(parents=True, exist_ok=True)
     
-    styles = plot_styling.list_styles()
+    styles = scistyle.list_styles()
     for style in styles:
         create_sample_plot(style, out_path / f"{style}.png")
 

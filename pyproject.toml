@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "plot-styling"
+name = "scistyle"
 version = "0.1.0"
 description = "A custom Matplotlib styling package for scientific plots."
 readme = "README.md"
@@ -17,12 +17,12 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/plot_styling"
+Homepage = "https://github.com/Esmaeelpour/scistyle"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/plot_styling"]
+packages = ["src/scistyle"]
 
 [tool.hatch.build.targets.sdist]
 include = [
-    "src/plot_styling/styles/*.mplstyle",
+    "src/scistyle/styles/*.mplstyle",
 ]

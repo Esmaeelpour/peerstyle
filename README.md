@@ -1,28 +1,28 @@
-# Plot Styling
+# SciStyle
 
 A custom Matplotlib styling package for scientific plots.
 
 ## Installation
 
 ```bash
-pip install .
+pip install scistyle
 ```
 
 ## Usage
 
 ```python
 import matplotlib.pyplot as plt
-import plot_styling
+import scistyle
 
 # List available styles
-print(plot_styling.list_styles())
+print(scistyle.list_styles())
 # ['custom_style', 'ieee', 'nature', 'poster']
 
 # Apply a specific style
-plot_styling.use_style('nature')
+scistyle.use_style('nature')
 
 # Or combine styles (e.g., use IEEE sizing with custom colors)
-# plot_styling.use_style(['ieee', 'custom_style'])
+# scistyle.use_style(['ieee', 'custom_style'])
 
 # Create a plot
 plt.plot([1, 2, 3], [4, 5, 6], label="Series 1")
