@@ -2,7 +2,18 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 import os
 
-__version__ = "0.1.2"
+from ._curved_text import CurvedText, curved_text
+
+__version__ = "0.1.3"
+
+__all__ = [
+    "use_style",
+    "list_styles",
+    "get_style_path",
+    "register_styles",
+    "curved_text",
+    "CurvedText",
+]
 
 
 def get_style_path(name="custom_style"):

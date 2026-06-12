@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "peerstyle"
-version = "0.1.2"
+version = "0.1.3"
 description = "Publication-quality Matplotlib styling for peer-reviewed journals."
 readme = "README.md"
 requires-python = ">=3.8"
@@ -12,7 +12,7 @@ license = {text = "MIT"}
 authors = [
     {name = "Javad Esmaeelpour", email = "jvd.esm@gmail.com"},
 ]
-keywords = ["matplotlib", "style", "scientific-plotting", "ieee", "nature", "peer-review"]
+keywords = ["matplotlib", "style", "scientific-plotting", "ieee", "nature", "peer-review", "curved-text", "line-labeling"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",

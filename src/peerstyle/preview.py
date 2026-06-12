@@ -6,19 +6,19 @@ import peerstyle
 def create_sample_plot(style_name, output_path=None):
     """Generate a sample plot using a specific style."""
     peerstyle.use_style(style_name)
-    
+
     x = np.linspace(0, 10, 100)
-    
+
     fig, ax = plt.subplots()
     ax.plot(x, np.sin(x), label='sin(x)')
     ax.plot(x, np.cos(x), label='cos(x)')
     ax.plot(x, np.sin(x) * np.cos(x), label='sin(x)cos(x)')
-    
+
     ax.set_xlabel('X-axis Label')
     ax.set_ylabel('Y-axis Label')
     ax.set_title(f'Style: {style_name}')
     ax.legend()
-    
+
     if output_path:
         fig.savefig(output_path)
         plt.close(fig)
@@ -26,14 +26,48 @@ def create_sample_plot(style_name, output_path=None):
     else:
         plt.show()
 
+
+def create_curved_text_demo(style_name="nature", output_path=None):
+    """Generate a demo plot showing curved text labeling with a given style."""
+    peerstyle.use_style(style_name)
+
+    x = np.linspace(0, 2 * np.pi, 400)
+
+    curves = [
+        (np.sin(x),         "sin(x)",         "C0", 0.25),
+        (np.cos(x),         "cos(x)",         "C1", 0.30),
+        (np.sin(2 * x),     "sin(2x)",        "C2", 0.20),
+        (0.5 * np.cos(2*x), "0.5·cos(2x)",   "C3", 0.35),
+    ]
+
+    fig, ax = plt.subplots()
+    for y, label, color, pos in curves:
+        ax.plot(x, y, color=color)
+        peerstyle.curved_text(ax, x, y, label, pos=pos, offset=6, color=color)
+
+    ax.set_xlabel('x')
+    ax.set_ylabel('y')
+    ax.set_title('Curved Text — Direct Line Labeling')
+
+    if output_path:
+        fig.savefig(output_path)
+        plt.close(fig)
+        print(f"Saved curved text demo to {output_path}")
+    else:
+        plt.show()
+
+
 def generate_gallery(output_dir="docs/gallery"):
-    """Generate preview images for all available styles."""
+    """Generate preview images for all available styles plus the curved text demo."""
     out_path = Path(output_dir)
     out_path.mkdir(parents=True, exist_ok=True)
-    
+
     styles = peerstyle.list_styles()
     for style in styles:
         create_sample_plot(style, out_path / f"{style}.png")
+
+    create_curved_text_demo("nature", out_path / "curved_text_demo.png")
+
 
 if __name__ == "__main__":
     generate_gallery()
