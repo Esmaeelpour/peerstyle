@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "scistyle"
-version = "0.1.0"
+version = "0.1.1"
 description = "A custom Matplotlib styling package for scientific plots."
 readme = "README.md"
 requires-python = ">=3.8"

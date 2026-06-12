@@ -39,11 +39,11 @@ plt.show()
 
 | Default (`custom_style`) | IEEE Journal (`ieee`) |
 |:---:|:---:|
-| <img src="docs/gallery/custom_style.png" width="400"> | <img src="docs/gallery/ieee.png" width="400"> |
+| <img src="https://raw.githubusercontent.com/Esmaeelpour/scistyle/main/docs/gallery/custom_style.png" width="400"> | <img src="https://raw.githubusercontent.com/Esmaeelpour/scistyle/main/docs/gallery/ieee.png" width="400"> |
 
 | Nature Journal (`nature`) | Presentation Poster (`poster`) |
 |:---:|:---:|
-| <img src="docs/gallery/nature.png" width="400"> | <img src="docs/gallery/poster.png" width="400"> |
+| <img src="https://raw.githubusercontent.com/Esmaeelpour/scistyle/main/docs/gallery/nature.png" width="400"> | <img src="https://raw.githubusercontent.com/Esmaeelpour/scistyle/main/docs/gallery/poster.png" width="400"> |
 
 </div>
 

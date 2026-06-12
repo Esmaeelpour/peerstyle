@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 import os
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 def get_style_path(name="custom_style"):
     """Return the absolute path to a included style file."""
