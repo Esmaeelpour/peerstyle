@@ -3,9 +3,17 @@ import numpy as np
 from pathlib import Path
 import peerstyle
 
+# All gallery images are rendered at this size so they look consistent
+# on the documentation site regardless of what the style sets internally.
+_GALLERY_FIGSIZE = (5, 3.75)
+_GALLERY_DPI = 150
+
+
 def create_sample_plot(style_name, output_path=None):
     """Generate a sample plot using a specific style."""
     peerstyle.use_style(style_name)
+    plt.rcParams['figure.figsize'] = _GALLERY_FIGSIZE
+    plt.rcParams['figure.dpi'] = _GALLERY_DPI
 
     x = np.linspace(0, 10, 100)
 
@@ -20,7 +28,7 @@ def create_sample_plot(style_name, output_path=None):
     ax.legend()
 
     if output_path:
-        fig.savefig(output_path)
+        fig.savefig(output_path, dpi=_GALLERY_DPI, bbox_inches='tight')
         plt.close(fig)
         print(f"Saved preview for '{style_name}' to {output_path}")
     else:
@@ -30,11 +38,11 @@ def create_sample_plot(style_name, output_path=None):
 def create_curved_text_demo(style_name="nature", output_path=None):
     """Generate a demo plot showing curved text labeling with a given style."""
     peerstyle.use_style(style_name)
+    plt.rcParams['figure.figsize'] = _GALLERY_FIGSIZE
+    plt.rcParams['figure.dpi'] = _GALLERY_DPI
 
     x = np.linspace(0, 2 * np.pi, 400)
 
-    # Each label placed at a different arc-length fraction so they
-    # land in separate regions of the plot.
     curves = [
         (np.sin(x),      "sin(x)",    "C0", 0.10,  9),
         (np.cos(x),      "cos(x)",    "C1", 0.88, -9),
@@ -52,7 +60,7 @@ def create_curved_text_demo(style_name="nature", output_path=None):
     ax.set_title('Curved Text — Direct Line Labeling')
 
     if output_path:
-        fig.savefig(output_path)
+        fig.savefig(output_path, dpi=_GALLERY_DPI, bbox_inches='tight')
         plt.close(fig)
         print(f"Saved curved text demo to {output_path}")
     else:
