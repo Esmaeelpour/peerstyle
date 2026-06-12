@@ -2,6 +2,8 @@
 
 Publication-quality Matplotlib styling for peer-reviewed journals.
 
+Yeah, you can prompt an LLM to spit out an rcParams block. I did that for a while too. But you still end up tweaking it every time, it drifts between projects, and half the time the font sizes are just vibes. So I packaged mine up properly.
+
 [![CI](https://github.com/Esmaeelpour/peerstyle/actions/workflows/ci.yml/badge.svg)](https://github.com/Esmaeelpour/peerstyle/actions/workflows/ci.yml)
 [![PyPI](https://img.shields.io/pypi/v/peerstyle)](https://pypi.org/project/peerstyle/)
 [![Python](https://img.shields.io/pypi/pyversions/peerstyle)](https://pypi.org/project/peerstyle/)
