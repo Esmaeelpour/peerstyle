@@ -3,16 +3,16 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "scistyle"
-version = "0.1.1"
-description = "A custom Matplotlib styling package for scientific plots."
+name = "peerstyle"
+version = "0.1.0"
+description = "Publication-quality Matplotlib styling for peer-reviewed journals."
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [
     {name = "Javad Esmaeelpour", email = "jvd.esm@gmail.com"},
 ]
-keywords = ["matplotlib", "style", "scientific-plotting", "ieee", "nature"]
+keywords = ["matplotlib", "style", "scientific-plotting", "ieee", "nature", "peer-review"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
@@ -31,16 +31,16 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Esmaeelpour/scistyle"
-Repository = "https://github.com/Esmaeelpour/scistyle"
-Issues = "https://github.com/Esmaeelpour/scistyle/issues"
+Homepage = "https://github.com/Esmaeelpour/peerstyle"
+Repository = "https://github.com/Esmaeelpour/peerstyle"
+Issues = "https://github.com/Esmaeelpour/peerstyle/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/scistyle"]
+packages = ["src/peerstyle"]
 
 [tool.hatch.build.targets.sdist]
 include = [
-    "src/scistyle/styles/*.mplstyle",
+    "src/peerstyle/styles/*.mplstyle",
     "README.md",
     "LICENSE",
 ]

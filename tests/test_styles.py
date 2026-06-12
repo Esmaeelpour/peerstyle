@@ -6,12 +6,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 import matplotlib.pyplot as plt
-import scistyle
+import peerstyle
 
 def test_style_application():
     print("Testing style application...")
     try:
-        scistyle.use_style("custom_style")
+        peerstyle.use_style("custom_style")
         print("Successfully applied 'custom_style'")
         
         # Check if some parameters are set as expected
@@ -24,7 +24,7 @@ def test_style_application():
         exit(1)
 
 def test_style_path_exists():
-    path = scistyle.get_style_path("custom_style")
+    path = peerstyle.get_style_path("custom_style")
     print(f"Checking style path: {path}")
     assert path.exists()
     print("Style path exists.")

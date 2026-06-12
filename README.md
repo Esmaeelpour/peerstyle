@@ -1,36 +1,25 @@
-# SciStyle
+# PeerStyle
 
-A custom Matplotlib styling package for scientific plots.
+Publication-quality Matplotlib styling for peer-reviewed journals.
 
 ## Installation
 
 ```bash
-pip install scistyle
+pip install peerstyle
 ```
 
 ## Usage
 
 ```python
 import matplotlib.pyplot as plt
-import scistyle
+import peerstyle
 
 # List available styles
-print(scistyle.list_styles())
+print(peerstyle.list_styles())
 # ['custom_style', 'ieee', 'nature', 'poster']
 
 # Apply a specific style
-scistyle.use_style('nature')
-
-# Or combine styles (e.g., use IEEE sizing with custom colors)
-# scistyle.use_style(['ieee', 'custom_style'])
-
-# Create a plot
-plt.plot([1, 2, 3], [4, 5, 6], label="Series 1")
-plt.xlabel("X-axis")
-plt.ylabel("Y-axis")
-plt.title("Sample Plot")
-plt.legend()
-plt.show()
+peerstyle.use_style('nature')
 ```
 
 ## Visual Gallery
@@ -39,11 +28,11 @@ plt.show()
 
 | Default (`custom_style`) | IEEE Journal (`ieee`) |
 |:---:|:---:|
-| <img src="https://raw.githubusercontent.com/Esmaeelpour/scistyle/main/docs/gallery/custom_style.png" width="400"> | <img src="https://raw.githubusercontent.com/Esmaeelpour/scistyle/main/docs/gallery/ieee.png" width="400"> |
+| <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/custom_style.png" width="400"> | <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/ieee.png" width="400"> |
 
 | Nature Journal (`nature`) | Presentation Poster (`poster`) |
 |:---:|:---:|
-| <img src="https://raw.githubusercontent.com/Esmaeelpour/scistyle/main/docs/gallery/nature.png" width="400"> | <img src="https://raw.githubusercontent.com/Esmaeelpour/scistyle/main/docs/gallery/poster.png" width="400"> |
+| <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/nature.png" width="400"> | <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/poster.png" width="400"> |
 
 </div>
 
