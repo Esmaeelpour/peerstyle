@@ -43,7 +43,7 @@ plt.style.use(['peerstyle.ieee', 'peerstyle.muted'])
 
 General-purpose serif scientific style. Enables LaTeX text rendering, 300 DPI, and grid lines. A good starting point for any journal that does not have a specific preset.
 
-![custom_style](gallery/custom_style.png?v=2){ width="500" }
+![custom_style](gallery/custom_style.png?v=3){ width="500" }
 
 **Key settings:** `text.usetex: True` · `font.family: serif` · `figure.figsize: 3.5×2.625 in` · `figure.dpi: 300`
 
@@ -53,7 +53,7 @@ General-purpose serif scientific style. Enables LaTeX text rendering, 300 DPI, a
 
 Follows IEEE journal submission guidelines. Times New Roman, inward ticks on all four sides, minor ticks enabled, and a CVD-friendly color cycle.
 
-![ieee](gallery/ieee.png?v=2){ width="500" }
+![ieee](gallery/ieee.png?v=3){ width="500" }
 
 **Key settings:** `font.serif: Times New Roman` · `figure.figsize: 3.5×2.625 in` · `xtick.direction: in` · `xtick.minor.visible: True`
 
@@ -63,7 +63,7 @@ Follows IEEE journal submission guidelines. Times New Roman, inward ticks on all
 
 Follows Nature journal submission guidelines. Arial/Helvetica, compact font sizes, outward ticks, 89 mm single-column width.
 
-![nature](gallery/nature.png?v=2){ width="500" }
+![nature](gallery/nature.png?v=3){ width="500" }
 
 **Key settings:** `font.family: sans-serif` · `figure.figsize: 3.504×2.628 in` · `axes.labelsize: 7` · `xtick.labelsize: 5`
 
@@ -73,7 +73,7 @@ Follows Nature journal submission guidelines. Arial/Helvetica, compact font size
 
 High-visibility style for conference posters. Large fonts, thick lines, vibrant colors, 150 DPI.
 
-![poster](gallery/poster.png?v=2){ width="500" }
+![poster](gallery/poster.png?v=3){ width="500" }
 
 **Key settings:** `figure.figsize: 12×9 in` · `lines.linewidth: 4` · `axes.titlesize: 40`
 
@@ -105,7 +105,7 @@ peerstyle.use_style(['custom_style', 'no-latex'])
 
 Removes the top and right axis spines. Standard in biology, statistics, and data science.
 
-![despine](gallery/despine.png?v=2){ width="500" }
+![despine](gallery/despine.png?v=3){ width="500" }
 
 ```python
 peerstyle.use_style(['nature', 'despine'])
@@ -119,7 +119,7 @@ peerstyle.use_style(['nature', 'despine'])
 
 Bumps fonts and figure size for Jupyter notebooks, where journal-sized figures are too small to read on screen. Also disables LaTeX.
 
-![notebook](gallery/notebook.png?v=2){ width="500" }
+![notebook](gallery/notebook.png?v=3){ width="500" }
 
 ```python
 peerstyle.use_style(['nature', 'notebook'])
@@ -134,7 +134,7 @@ peerstyle.use_style(['ieee', 'notebook'])
 
 [Paul Tol's](https://personal.sron.nl/~pault/) CVD-safe bright colour palette. Distinguishable by people with colour-vision deficiency and in greyscale print.
 
-![bright](gallery/bright.png?v=2){ width="500" }
+![bright](gallery/bright.png?v=3){ width="500" }
 
 ```python
 peerstyle.use_style(['ieee', 'bright'])
@@ -148,7 +148,7 @@ peerstyle.use_style(['ieee', 'bright'])
 
 Paul Tol's CVD-safe muted colour palette. Softer than `bright` and better when you have many series.
 
-![muted](gallery/muted.png?v=2){ width="500" }
+![muted](gallery/muted.png?v=3){ width="500" }
 
 ```python
 peerstyle.use_style(['nature', 'muted'])
@@ -162,7 +162,7 @@ peerstyle.use_style(['nature', 'muted'])
 
 Black and grey tones with varied linestyles. Use this to verify monochrome readability or to meet journal requirements for B&W print.
 
-![grayscale](gallery/grayscale.png?v=2){ width="500" }
+![grayscale](gallery/grayscale.png?v=3){ width="500" }
 
 ```python
 peerstyle.use_style(['ieee', 'grayscale'])
