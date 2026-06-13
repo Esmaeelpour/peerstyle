@@ -16,19 +16,19 @@ Yeah, you can prompt an LLM to spit out an rcParams block. I did that for a whil
 
 | `custom_style` | `ieee` |
 |:---:|:---:|
-| <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/custom_style.png" width="380"> | <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/ieee.png" width="380"> |
+| <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/custom_style.png?v=2" width="380"> | <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/ieee.png?v=2" width="380"> |
 
 | `nature` | `poster` |
 |:---:|:---:|
-| <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/nature.png" width="380"> | <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/poster.png" width="380"> |
+| <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/nature.png?v=2" width="380"> | <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/poster.png?v=2" width="380"> |
 
 | `bright` | `muted` |
 |:---:|:---:|
-| <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/bright.png" width="380"> | <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/muted.png" width="380"> |
+| <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/bright.png?v=2" width="380"> | <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/muted.png?v=2" width="380"> |
 
 | `grayscale` | `despine` |
 |:---:|:---:|
-| <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/grayscale.png" width="380"> | <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/despine.png" width="380"> |
+| <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/grayscale.png?v=2" width="380"> | <img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/despine.png?v=2" width="380"> |
 
 </div>
 
@@ -127,7 +127,7 @@ peerstyle.curved_text(ax, x, np.cos(x), 'cos(x)', pos=0.88, offset=-9, color='C1
 ```
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/curved_text_demo.png" width="500">
+<img src="https://raw.githubusercontent.com/Esmaeelpour/peerstyle/main/docs/gallery/curved_text_demo.png?v=2" width="500">
 </div>
 
 | Parameter | Default | Description |
