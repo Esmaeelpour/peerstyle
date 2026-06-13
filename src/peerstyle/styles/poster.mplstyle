@@ -14,7 +14,7 @@ xtick.labelsize: 28
 ytick.labelsize: 28
 
 # Lines
-axes.linewidth: 2
+axes.linewidth: 1.2
 grid.linewidth: 1.5
 lines.linewidth: 4
 lines.markersize: 12
