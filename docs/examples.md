@@ -121,7 +121,7 @@ peerstyle.curved_text(ax, x, np.sin(2*x)/2, '½ sin(2x)', pos=0.52, offset=9,  c
 peerstyle.save(fig, 'labeled_lines.pdf')
 ```
 
-![curved text demo](gallery/curved_text_demo.png)
+![curved text demo](gallery/curved_text_demo.png?v=5){ width="500" }
 
 **Placement tips:**
 
