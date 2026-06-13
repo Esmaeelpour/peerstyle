@@ -6,10 +6,14 @@ import peerstyle
 
 _GALLERY_DPI = 150
 
-# Layout/font modifiers need a base preset to show what they change.
-# Color-only modifiers (bright, muted, grayscale) need no base — the
-# palette is the point and it reads clearly on matplotlib defaults.
+# All modifiers need a base so the canvas size, font scale, and line
+# weight are consistent with the other gallery images.
+# Using ieee as base gives the 3.5×2.625 journal canvas that all
+# preset images share, making everything proportional at display size.
 _MODIFIER_BASES = {
+    'bright':   'ieee',
+    'muted':    'ieee',
+    'grayscale': 'ieee',
     'despine':  'nature',
     'no-latex': 'ieee',
     'notebook': 'nature',
@@ -25,17 +29,10 @@ def create_sample_plot(style_name, output_path=None):
     else:
         peerstyle.use_style(style_name)
 
-    # poster's 40pt fonts overwhelm any web-displayable canvas.
-    # The visual signature is thick lines + vibrant colors, so show those
-    # at a display-friendly scale with moderate fonts.
-    if style_name == 'poster':
-        plt.rcParams.update({
-            'font.size': 11, 'axes.labelsize': 11, 'axes.titlesize': 12,
-            'legend.fontsize': 10, 'xtick.labelsize': 10, 'ytick.labelsize': 10,
-        })
-        fig, ax = plt.subplots(figsize=(5, 3.75))
-    else:
-        fig, ax = plt.subplots()  # each style controls its own figsize via rcParams
+    # Let every style use its own figsize from rcParams — no overrides.
+    # poster at 12×9 is correct: its thick border and fonts are
+    # proportional to that canvas, and scale normally at display size.
+    fig, ax = plt.subplots()
 
     x = np.linspace(0, 10, 100)
     ax.plot(x, np.sin(x),           label='sin(x)')
