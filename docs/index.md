@@ -67,26 +67,26 @@ with peerstyle.style_context('ieee'):
 
 | `custom_style` | `ieee` |
 |:-:|:-:|
-| ![custom_style](gallery/custom_style.png?v=4) | ![ieee](gallery/ieee.png?v=4) |
+| ![custom_style](gallery/custom_style.png?v=5) | ![ieee](gallery/ieee.png?v=5) |
 
 | `nature` | `poster` |
 |:-:|:-:|
-| ![nature](gallery/nature.png?v=4) | ![poster](gallery/poster.png?v=4) |
+| ![nature](gallery/nature.png?v=5) | ![poster](gallery/poster.png?v=5) |
 
 ### Color modifiers
 
 | `bright` | `muted` |
 |:-:|:-:|
-| ![bright](gallery/bright.png?v=4) | ![muted](gallery/muted.png?v=4) |
+| ![bright](gallery/bright.png?v=5) | ![muted](gallery/muted.png?v=5) |
 
 ### Layout modifiers
 
 | `grayscale` | `despine` |
 |:-:|:-:|
-| ![grayscale](gallery/grayscale.png?v=4) | ![despine](gallery/despine.png?v=4) |
+| ![grayscale](gallery/grayscale.png?v=5) | ![despine](gallery/despine.png?v=5) |
 
 ### Curved text
 
 Label lines directly along their paths — no legend needed.
 
-![curved text demo](gallery/curved_text_demo.png?v=4)
+![curved text demo](gallery/curved_text_demo.png?v=5)
