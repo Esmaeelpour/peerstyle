@@ -89,4 +89,6 @@ with peerstyle.style_context('ieee'):
 
 Label lines directly along their paths — no legend needed.
 
-![curved text demo](gallery/curved_text_demo.png?v=5){ width="350" }
+<figure markdown="span">
+  ![curved text demo](gallery/curved_text_demo.png?v=5){ width="450" }
+</figure>
